@@ -1,0 +1,39 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    block title
+      title 白条+
+    meta(http-equiv='Expires' CONTENT='0')
+    meta(http-equiv='Cache-Control' content='no-cache')
+    meta(http-equiv='Pragma' content='no-cache')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0')
+    meta(name='format-detection', content='telephone=no')
+    meta(name='apple-mobile-web-app-capable', content='yes')
+    // build:css(.tmp) styles/common.vendor.css
+    link(rel='stylesheet', href='styles/base/common.css')
+    link(rel='stylesheet', href='styles/share.css')
+    // endbuild
+    block styles
+body
+  include ../includes/loading.jade
+
+  .bfc.main-content.h100p
+    block content
+
+  // build:js({app,.tmp}) scripts/zepto.min.js
+  script(src='scripts/lib/zepto.js')
+  // endbuild
+
+  block commonScriptStart
+  script(src='scripts/webconfig.js')
+  script(src='scripts/lib/zepto-core.extend.js')
+  script(src='scripts/lib/zepto-class.js')
+  script(src='scripts/lib/zepto-css3-animationend.js')
+  script(src='scripts/lib/zepto-anim-effect.js')
+  script(src='scripts/lib/zepto-loading.js')
+  script(src='scripts/lib/zepto-route.js')
+  script(src='scripts/ui/zepto-ui.base.js')
+  block commonScriptEnd
+
+  block scripts

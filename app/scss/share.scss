@@ -1,0 +1,120 @@
+// bower:scss
+// endbower
+@import "base/utility";
+@import "base/loading";
+@charset "utf-8";
+body {
+    font-family: 'Helvetica Neue', Helvetica, STHeiTi, sans-serif;
+}
+
+.bg-white {
+    background-color: #ffffff;
+}
+
+.main-content {
+    position: relative;
+    z-index: 10;
+}
+
+//position
+.mt20 {
+    margin-top: $rem-20;
+}
+
+.mt30 {
+    margin-top: $rem-30;
+}
+
+.mt40 {
+    margin-top: $rem-40;
+}
+
+.mt60 {
+    margin-top: $rem-60;
+}
+
+.ml30 {
+    margin-left: $rem-30;
+}
+
+.ml20 {
+    margin-left: $rem-10;
+}
+
+.ml10 {
+    margin-left: $rem-10;
+}
+
+.mr30 {
+    margin-right: $rem-30;
+}
+
+.pl30 {
+    padding-left: $rem-30;
+}
+
+.pr30 {
+    padding-right: $rem-30;
+}
+
+.in30 {
+    text-indent: $rem-30;
+}
+/*
+font-size
+*/
+
+.fs-24 {
+    font-size: $rem-24;
+}
+
+.fs-30 {
+    font-size: $rem-30;
+}
+
+.fs-36 {
+    font-size: $rem-36;
+}
+
+.share-top {
+    background-color: $background1;
+    color: #ffffff;
+}
+/*
+  bottom
+*/
+
+.btn-white {
+    background-color: #ffffff;
+    color: #333333;
+    @include create-border();
+}
+
+//icon
+.icon-banner:before {
+    @include create-icon($rem-166, $rem-159, '../images/success-banner.png', '');
+    @include absolute-right-top($rem-30, -$rem-20);
+    content: '';
+    visibility: visible;
+}
+
+.footerbar {
+    font-size: $rem-20;
+    color: $color-a2a2a6;
+}
+
+::-webkit-input-placeholder {
+    letter-spacing: 0;
+}
+
+:-moz-placeholder {
+    letter-spacing: 0;
+}
+
+::-moz-placeholder {
+    letter-spacing: 0;
+}
+
+:-ms-input-placeholder {
+    letter-spacing: 0;
+}

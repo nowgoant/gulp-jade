@@ -1,0 +1,27 @@
+extends layouts/default
+
+block title
+  title 首页
+block styles
+  // build:css(.tmp) styles/pay-mode.css
+  link(rel='stylesheet', href='styles/pay-mode.css')
+  // endbuild
+
+block content
+  .row.marketing
+    .col-lg-6
+      h4 HTML5 Boilerplate
+
+block commonScriptStart
+  // build:js({app,.tmp}) scripts/common.pay.js
+
+block commonScriptEnd
+
+  // endbuild
+
+block scripts
+  // build:js({app,.tmp}) scripts/cashier.pay.js
+  script(src='scripts/vm/pay-view-model.js')
+  script(src="scripts/pay-share.js")
+  script(src="scripts/pay.js")
+  // endbuild

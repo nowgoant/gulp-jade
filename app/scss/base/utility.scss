@@ -1,0 +1,153 @@
+// bower:scss
+// endbower
+@import "size";
+@import "color";
+//color
+$color-33333: #333333;
+$color-cccccc: #cccccc;
+$color-dddddd: $theme-color-border;
+$color-6db9f8: #6db9f8;
+$color-btn: $theme-color-bule;
+$color-cfcfcf: #cfcfcf;
+$color-a2a2a6: #a2a2a6;
+$color-efeff4: #efeff4;
+//width height
+$defalutHeight: 2.6875rem;
+//border
+$borderColor: $color-dddddd;
+$borderColor2: $color-6db9f8;
+//font
+$background1: $color-btn;
+@mixin create-border($color: $borderColor, $size: $rem-2) {
+    border: $size solid $color;
+}
+
+@mixin create-border-1px($color: $borderColor, $size:1px) {
+    border: $size solid $color;
+}
+
+@mixin create-border-top($color: $borderColor, $size: $rem-2) {
+    border-top: $size solid $color;
+    ;
+}
+
+@mixin create-border-right($color: $borderColor, $size: $rem-2) {
+    border-right: $size solid $color;
+    ;
+}
+
+@mixin create-border-bottom($color: $borderColor, $size: $rem-2) {
+    border-bottom: $size solid $color;
+    ;
+}
+
+@mixin create-border-left($color: $borderColor, $size: $rem-2) {
+    border-left: $size solid $color;
+    ;
+}
+
+@mixin create-height-line($height: $defalutHeight) {
+    height: $height;
+    line-height: $height;
+}
+
+@mixin create-height-line-size($height: $defalutHeight) {
+    font-size: $height;
+    height: $height;
+    line-height: $height;
+}
+
+@mixin createBtn($width: 90%, $color: #fff, $background: #09978f, $height: $defalutHeight, $size: $rem-40, $borderRadius: .093rem) {
+    width: $width;
+    height: $height;
+    line-height: $height;
+    text-align: center;
+    color: $color;
+    background-color: $background;
+    font-size: $size;
+    border-radius: $borderRadius;
+}
+
+@mixin absolute-left-top($left: 0, $top: 0) {
+    position: absolute;
+    left: $left;
+    top: $top;
+}
+
+@mixin absolute-right-top($right: 0, $top: 0) {
+    position: absolute;
+    right: $right;
+    top: $top;
+}
+
+@mixin absolute-lift-bottom($left: 0, $bottom: 0) {
+    position: absolute;
+    left: $left;
+    bottom: $bottom;
+}
+
+@mixin VerticalCenter($heigth: $rem-30) {
+    position: absolute;
+    top: 50%;
+    margin-top: -($heigth / 2);
+}
+
+@mixin VerticalCenterLeft($heigth: $rem-30, $left: $rem-30) {
+    @include VerticalCenter($heigth);
+    left: $left;
+}
+
+@mixin VerticalCenterRight($heigth: $rem-30, $right: $rem-30) {
+    @include VerticalCenter($heigth);
+    right: $right;
+}
+
+@mixin ellipsis() {
+    -o-text-overflow: ellipsis;
+    -moz-text-overflow: ellipsis;
+    -ms-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+@mixin create-icon($width: 0, $height: 0, $url: '', $base64: '', $posx: 0, $posy: 0, $sizew: 100%, $sizeh: 100%) {
+    width: $width;
+    height: $height;
+    line-height: 0rem;
+    background-image: url($url);
+    @if ($base64 !='') {
+        background-image: url($base64);
+    }
+    background-position: $posx $posy;
+    background-repeat: no-repeat;
+    background-size: $sizew $sizeh;
+}
+
+@mixin create-inblock-icon($width: 0, $height: 0, $url: '', $base64: '', $posx: 0, $posy: 0, $sizew: 100%, $sizeh: 100%) {
+    display: inline-block;
+    @include create-icon($width, $height, $url, $base64, $posx, $posy, $sizew, $sizeh);
+}
+
+@mixin create-class-icon($width: 0, $height: 0, $url: '', $base64: '', $posx: 0, $posy: 0, $sizew: 100%, $sizeh: 100%) {
+    @include create-icon($width, $height, $url, $base64, $posx, $posy, $sizew, $sizeh);
+    content: '';
+    visibility: visible;
+}
+/*
+
+*/
+
+@mixin create-radius($size: 50%) {
+    -moz-border-radius: $size;
+    -webkit-border-radius: $size;
+    border-radius: $size;
+}
+
+@mixin create-radius-w-h($size: 50%, $width: $rem-20, $height: $rem-20) {
+    -moz-border-radius: $size;
+    -webkit-border-radius: $size;
+    border-radius: $size;
+    width: $width;
+    height: $height;
+}

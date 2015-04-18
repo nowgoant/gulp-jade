@@ -1,0 +1,11 @@
+// bower:scss
+// endbower
+@import "base/utility";
+
+.error {
+  padding: $rem-40 $rem-30;
+
+  p {
+    margin-bottom: $rem-40;
+  }
+}
