@@ -16,7 +16,7 @@ gulp.task('styles', function () {
       onError: console.error.bind(console, 'Sass error:')
     }))
     .pipe($.postcss([
-      require('autoprefixer-core')({browsers: ['last 2 version']})
+      require('autoprefixer-core')({browsers: ['last 4 version']})
     ]))
     .pipe($.sourcemaps.write())
     .pipe(gulp.dest('app/styles'))
@@ -46,7 +46,7 @@ gulp.task('html', ['views', 'styles'], function () {
     .pipe($.if('*.css', $.csso()))
     .pipe(assets.restore())
     .pipe($.useref())
-    .pipe($.if('*.html', $.minifyHtml({conditionals: true, loose: true})))
+    //.pipe($.if('*.html', $.minifyHtml({conditionals: true, loose: true})))
     .pipe(gulp.dest('dist'));
 });
 
@@ -80,7 +80,16 @@ gulp.task('extras', function () {
   }).pipe(gulp.dest('dist'));
 });
 
-gulp.task('clean', require('del').bind(null, ['.tmp', 'dist']));
+gulp.task('rev',function(){
+  return gulp.src(['app/styles/**/*.css', 'app/scripts/**/*.js'], {base: 'app'})
+    //.pipe(gulp.dest('app/assets'))  // copy original assets to build dir
+    .pipe($.rev())
+    //.pipe(gulp.dest('app/assets'))  // write rev'd assets to build dir
+    //.pipe($.rev.manifest())
+    .pipe(gulp.dest('.tmp')); // write manifest to build dir
+});
+
+gulp.task('clean', require('del').bind(null, ['.tmp', 'dist','app/styles']));
 
 gulp.task('serve', ['views', 'styles', 'fonts'], function () {
   browserSync({

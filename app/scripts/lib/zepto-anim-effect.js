@@ -62,7 +62,4 @@
       });
     }
   });
-}
-(window.Zepto)
-)
-;
+}(window.Zepto));
