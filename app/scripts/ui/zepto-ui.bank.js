@@ -1,7 +1,3 @@
-/**
- * Created by majun1 on 2015/3/18.
- */
-
 (function($, ui) {
     'use strict';
     var cards,

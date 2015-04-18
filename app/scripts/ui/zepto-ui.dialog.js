@@ -1,6 +1,3 @@
-/**
- * Created by majun1 on 2015/3/2.
- */
 
 (function ($) {
   'use strict';
