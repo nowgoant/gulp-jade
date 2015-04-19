@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>swap iscroll</title>
+    <meta http-equiv="Expires" CONTENT="0">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <!-- build:css(.tmp) styles/common.vendor.css-->
+    <link rel="stylesheet" href="styles/base/common.css">
+    <link rel="stylesheet" href="styles/share.css">
+    <!-- endbuild-->
+    <!-- build:css(.tmp) styles/swap-iscroll.css-->
+    <link rel="stylesheet" href="styles/swap-iscroll.css">
+    <!-- endbuild-->
+  </head>
+</html>
+<body>
+  <div class="loading-box w100p h100p bfc transition">
+    <div class="text-loading jmu-before-show jmu-show">
+      <div class="loading db"></div>
+      <p class="content">拼命加载中...</p>
+    </div>
+  </div>
+  <div class="bfc main-content w100p h100p">
+    <div id="viewport">
+      <div id="wrapper">
+        <div id="scroller">
+          <div class="slide">
+            <div class="painting giotto"></div>
+          </div>&#x9;&#x9;&#x9;
+          <div class="slide">
+            <div class="painting leonardo"></div>
+          </div>&#x9;&#x9;&#x9;
+          <div class="slide">
+            <div class="painting gaugin"></div>
+          </div>&#x9;&#x9;&#x9;
+          <div class="slide">
+            <div class="painting warhol"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="indicator">
+      <div id="dotty"></div>
+    </div>
+  </div>
+  <!-- build:js({app,.tmp}) scripts/zepto.min.js-->
+  <script src="scripts/lib/zepto.js"></script>
+  <!-- endbuild-->
+  <!-- build:js({app,.tmp}) scripts/common.swap-iscroll.js-->
+  <script src="scripts/webconfig.js"></script>
+  <script src="scripts/lib/zepto-core.extend.js"></script>
+  <script src="scripts/lib/zepto-class.js"></script>
+  <script src="scripts/lib/zepto-css3-animationend.js"></script>
+  <script src="scripts/lib/zepto-anim-effect.js"></script>
+  <script src="scripts/lib/zepto-loading.js"></script>
+  <script src="scripts/lib/iscroll.js"></script>
+  <script src="scripts/lib/zepto-iscroll.js"></script>
+  <!-- endbuild-->
+  <!-- build:js({app,.tmp}) scripts/swap-iscroll.pay.js-->
+  <script src="scripts/swap-demo.js"></script>
+  <!-- endbuild-->
+</body>
