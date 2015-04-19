@@ -94,11 +94,17 @@ gulp.task('clean', require('del').bind(null, ['.tmp', 'dist','app/styles']));
 gulp.task('serve', ['views', 'styles', 'fonts'], function () {
   browserSync({
     notify: false,
-    port: 9000,
+    port: 80,
     server: {
       baseDir: ['.tmp', 'app'],
       routes: {
         '/bower_components': 'bower_components'
+      }
+    },
+    ui: {
+      port: 8080,
+      weinre: {
+        port: 9090
       }
     }
   });
@@ -112,7 +118,7 @@ gulp.task('serve', ['views', 'styles', 'fonts'], function () {
   ]).on('change', reload);
 
   gulp.watch('app/jade/**/*.jade', ['views']);
-  gulp.watch('app/styles/**/*.scss', ['styles']);
+  gulp.watch(['app/styles/*.scss','app/styles/**/*.scss'], ['styles']);
   gulp.watch('app/fonts/**/*', ['fonts']);
   gulp.watch('bower.json', ['wiredep', 'fonts']);
 });

@@ -1,0 +1,42 @@
+- var rootClass = 'swap-iscroll';
+
+extends layouts/default
+
+
+block title
+  title swap iscroll
+block styles
+  // build:css(.tmp) styles/swap-iscroll.css
+  link(rel='stylesheet', href='styles/swap-iscroll.css')
+  // endbuild
+
+block content
+  #viewport
+    #wrapper
+      #scroller
+        .slide
+          .painting.giotto
+        | &#x9;&#x9;&#x9;
+        .slide
+          .painting.leonardo
+        | &#x9;&#x9;&#x9;
+        .slide
+          .painting.gaugin
+        | &#x9;&#x9;&#x9;
+        .slide
+          .painting.warhol
+  #indicator
+    #dotty
+
+block commonScriptStart
+  // build:js({app,.tmp}) scripts/common.swap-iscroll.js
+
+block commonScriptEnd
+  script(src='scripts/lib/iscroll.js')
+  script(src='scripts/lib/zepto-iscroll.js')
+  // endbuild
+
+block scripts
+  // build:js({app,.tmp}) scripts/swap-iscroll.pay.js
+  script(src='scripts/swap-demo.js')
+  // endbuild
