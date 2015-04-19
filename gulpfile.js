@@ -24,7 +24,7 @@ gulp.task('styles', function () {
 });
 
 gulp.task('jshint', function () {
-  return gulp.src('app/scripts/**/*.js')
+  return gulp.src(['app/scripts/**/*.js','!app/scripts/vendor/*.js'])
     .pipe(reload({stream: true, once: true}))
     .pipe($.jshint())
     .pipe($.jshint.reporter('jshint-stylish'))
@@ -121,6 +121,30 @@ gulp.task('serve', ['views', 'styles', 'fonts'], function () {
   gulp.watch('app/scss/**/*.scss', ['styles']);
   gulp.watch('app/fonts/**/*', ['fonts']);
   gulp.watch('bower.json', ['wiredep', 'fonts']);
+});
+
+gulp.task('dist', ['default'], function () {
+  browserSync({
+    notify: false,
+    port: 80,
+    server: {
+      baseDir: ['dist']
+    },
+    ui: {
+      port: 8080,
+      weinre: {
+        port: 9090
+      }
+    }
+  });
+
+  // watch for changes
+  gulp.watch([
+    'dist/*.html',
+    'dist/scripts/**/*.js',
+    'dist/images/**/*',
+    'dist/fonts/**/*'
+  ]).on('change', reload);
 });
 
 // inject bower components

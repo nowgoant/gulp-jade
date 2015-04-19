@@ -20,12 +20,11 @@
     }
   };
 
-  function _setState() {
-    var self = this;
-    if (self.options.isShow) {
-      self.$ele.show();
+  function _setState(target) {
+    if (target.options.isShow) {
+      target.$ele.show();
     } else {
-      self.$ele.hide();
+      target.$ele.hide();
     }
   }
 
@@ -54,11 +53,11 @@
     _bindEvent: function () {
       var self = this;
       self.$ele.transitionEnd(function () {
-        _setState.call(self);
+        _setState(self);
       });
 
       self.$ele.simpleAnimationEnd(function () {
-        _setState.call(self);
+        _setState(self);
       });
     }
   });

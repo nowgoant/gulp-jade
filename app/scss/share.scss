@@ -91,17 +91,8 @@ font-size
 }
 
 //icon
-.icon-banner:before {
-    @include create-icon($rem-166, $rem-159, '../images/success-banner.png', '');
-    @include absolute-right-top($rem-30, -$rem-20);
-    content: '';
-    visibility: visible;
-}
 
-.footerbar {
-    font-size: $rem-20;
-    color: $color-a2a2a6;
-}
+
 
 ::-webkit-input-placeholder {
     letter-spacing: 0;
